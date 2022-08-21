@@ -1,0 +1,26 @@
+{% extends 'accounts/main.html' %}
+{% block title %} Order_Form {% endblock %}
+
+{% block content %}
+<br>
+ <div class="row offset-2">
+    <div class="col-8 ">
+      <div class="col-md">
+            <div class="card mb-3" >
+              <div class="card-header">
+                <h5 class="card-title text-primary text-center">Create New Order</h5>
+              </div>
+              <div class="card-body">
+                <form action="" method="POST" >
+                        {% csrf_token %}
+                            {{form}}
+                        <hr>
+
+                        <button type="submit" class="btn btn-sm mb-2 btn-success float-end" value="Submit">Submit</button>
+                    </form>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

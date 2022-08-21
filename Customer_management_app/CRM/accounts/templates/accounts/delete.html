@@ -1,0 +1,25 @@
+{% extends 'accounts/main.html' %}
+{% block title %} Delete {% endblock %}
+{% block content %}
+<br>
+  <div class="row offset-3">
+    <div class="col-6 ">
+      <div class="col-md">
+            <div class="card mb-3" >
+              <div class="card-header">
+                <h5 class="card-title text-danger">Are you want to delete?</h5>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title text-center">{{orders}}</h5>
+
+                 <form action="{% url 'remove_order' orders.id %}" method="POST">
+                   {% csrf_token %}
+                      <button class="btn btn-sm btn-danger float-end mx-4" type="submit">Yes</button>
+                      <a href="{% url 'dashboard' %}" class="btn btn-sm btn-warning float-end">No</a>
+                  </form>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
